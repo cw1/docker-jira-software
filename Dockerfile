@@ -16,7 +16,7 @@ FROM openjdk:8
 
 # Install Jira
 
-ENV JIRA_VERSION 6.2.5
+ENV JIRA_VERSION 7.3.1
 ENV CONTEXT_PATH ROOT
 ADD launch.bash /launch
 ADD provision.bash /provision
