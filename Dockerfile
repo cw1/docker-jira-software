@@ -3,7 +3,9 @@
 
 FROM openjdk:8
 
-  # Setup volume handling
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install xmlstarlet -y
+
+# Setup volume handling
   RUN /usr/sbin/groupadd atlassian
   ADD own-volume.sh /usr/local/bin/own-volume
   RUN echo "%atlassian ALL=NOPASSWD: /usr/local/bin/own-volume" >> /etc/sudoers
