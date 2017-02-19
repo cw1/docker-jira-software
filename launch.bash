@@ -12,8 +12,6 @@ else
     CONTEXT_PATH="/$CONTEXT_PATH"
 fi
     
-xmlstarlet ed -u '//Context/@path' -v "$CONTEXT_PATH" conf/server-backup.xml > conf/server.xml
-
 if [ -n "$DATABASE_URL" ]; then
   extract_database_url "$DATABASE_URL" DB /opt/jira/lib
   DB_JDBC_URL="$(xmlstarlet esc "$DB_JDBC_URL")"
