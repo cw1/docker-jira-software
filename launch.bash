@@ -19,7 +19,7 @@ if [ -n "$DATABASE_URL" ]; then
   if [ "$DB_TYPE" != "mysql" ]; then
       SCHEMA='<schema-name>public</schema-name>'
   fi
-  cat <<END > /opt/atlassian-home/dbconfig.xml
+  cat << EOF > /opt/atlassian-home/dbconfig.xml
   <?xml version="1.0" encoding="UTF-8"?>
   <jira-database-config>
     <name>defaultDS</name>
@@ -39,7 +39,7 @@ if [ -n "$DATABASE_URL" ]; then
       <pool-remove-abandoned-timeout>300</pool-remove-abandoned-timeout>
     </jdbc-datasource>
   </jira-database-config>
-  END
+  EOF
 fi
 
 /opt/jira/bin/start-jira.sh -fg
